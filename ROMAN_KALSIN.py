@@ -6,7 +6,7 @@ import socket
 def desired_look(string):# Принимает строку от сервера и выдает строку нужного вида
     call_date_time = datetime.datetime(int(string[121:125]), int(string[126:128]), int(string[129:131]), int(string[132:134]), int(string[135:137]), int(string[138:140])) #Записываем дату время в удобном формате при помощи модуля datetime
     id_s = string[0:5].lstrip("0") # Запиасываем ИД удаляя лишние нули в начале строки
-    imei_s = string[29:44].strip() # Записваем ЕМЕЙ (удаляя лишние пробелы на всякий случай) :)
+    imei_s = string[29:44].strip() # Записваем EMAI (удаляя лишние пробелы на всякий случай) :)
     date_s = call_date_time.strftime("%d.%m.%Y") # Записываем дату в нужном нам формате из переменной call_date_time
     duration_s = string[141:151].lstrip("0") + " sec" # Записываем продолжительность звонка удаляя лишние нули в начале строки
     if duration_s == " sec":
