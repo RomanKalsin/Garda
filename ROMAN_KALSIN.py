@@ -19,7 +19,7 @@ def desired_look(string):# Принимает строку от сервера �
     dict_call = '{{\n    "{}": {{\n        "{}": {{\n            "date": "{}",\n            "duration": "{}",\n            "name_from": "{}",\n            "name_to": "{}",\n            "numb_from": "{}",\n            "numb_to": "{}",\n            "time": "{}"\n        }}\n    }}\n}}'.format(id_s, imei_s, date_s, duration_s, name_from_s, name_to_s, numb_from_s, numb_to_s, time_s)
     return str(dict_call)
    
-def con_serv(host, port, name): #Для наглядности оставил комманды ПРИНТ
+def con_serv(host, port, name): #Для наглядности оставил комманды PRINT
     sock = socket.socket()
     sock.connect((host, port))
     print(sock.recv(1024)) #Просьба ввести имя
