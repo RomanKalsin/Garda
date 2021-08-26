@@ -27,7 +27,7 @@ def con_serv(host, port, name): #Для наглядности оставил к
     m = sock.recv(1024).decode("utf-8") #Сервер предлагает попытаться пройти тест
     if m == "{}, let's try to pass the test, good luck!\n\n".format(name):# Если сервер желает нам удачи входим в цикл
         while True:
-            s = sock.recv(1024).decode("utf-8") # Ответ от сервера строка            
+            s = sock.recv(1024).decode("utf-8") # Ответ от сервера строка c данными           
             if len(s) == 152: 
                 print(s)
                 sock.send(bytes(desired_look(s),"utf-8"))# Отправляем ответ серверу в нужном виде преобразуя в байты
